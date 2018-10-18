@@ -1,7 +1,8 @@
 # Start from argon (latest long term supported version of node)
 # - argon : Full node dev env (640 MB) : python inside
 # - argon-slim : Light node env (200 MB) : no python, can be an issue for npm installs / builds
-FROM node:argon-slim
+#FROM node:argon-slim
+FROM node:carbon-slim
 
 MAINTAINER Stève Sfartz
 
@@ -26,8 +27,9 @@ COPY . /home/node/sparkbot
 RUN chown -R node:node /home/node/sparkbot
 USER node
 ENV HOME /home/node
-#ENV SCRIPT templates/onEvent-all-all.js
-ENV SCRIPT quickstart/onEvent-all-all.js
+#ENV SCRIPT examples/room-stats.js
+#ENV SCRIPT examples/room-stats.js
+ENV SCRIPT examples/room-stats.js
 
 # Run default sample
 CMD /usr/local/bin/node $SCRIPT

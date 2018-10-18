@@ -2,6 +2,12 @@
 node_modules/
 npm-debug.log
 
+# local files
+.env
+*.tmp
+makefile.conf
+
+
 # IDE
 .idea/
 .vscode/
